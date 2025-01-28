@@ -1,7 +1,10 @@
-# Azure DevOps status
+# Azure DevOps PR status
 
-Update commit status for Azure DevOps repositories
+Update PR status for Azure DevOps repositories
 
+## NOTE
+
+This is a fork of the original [Azure Devops status ](https://github.com/mediusoft/bitrise-step-azure-devops-status)step by mediusoft, that instead updates PR status.
 
 ## How to use this Step
 

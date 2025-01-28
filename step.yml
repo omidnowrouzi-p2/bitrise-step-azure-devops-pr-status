@@ -1,13 +1,13 @@
 title: |-
-  Azure DevOps status
+  Azure DevOps PR status
 summary: |
-  Update commit status for Azure DevOps repositories
+  Update pull request status for Azure DevOps repositories
 description: |
-  Update commit status for Azure DevOps repositories.
+  Update pull request status for Azure DevOps repositories.
   This step always runs, no matter if build succeeded or failed.
-website: https://github.com/mediusoft/bitrise-step-azure-devops-status
-source_code_url: https://github.com/mediusoft/bitrise-step-azure-devops-status
-support_url: https://github.com/mediusoft/bitrise-step-azure-devops-status/issues
+website: https://github.com/omidnowrouzi-p2/bitrise-step-azure-devops-pr-status
+source_code_url: https://github.com/omidnowrouzi-p2/bitrise-step-azure-devops-pr-status
+support_url: https://github.com/omidnowrouzi-p2/bitrise-step-azure-devops-pr-status/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
@@ -83,11 +83,11 @@ inputs:
       is_expand: true
       is_required: true
 
-  - devops_commit_state: "auto"
+  - devops_pr_state: "auto"
     opts:
-      title: Commit status
+      title: Pull Request status
       description: |
-        Status to set on commit.
+        Status to set on pr.
 
         Possible values are `auto`, `error`, `failed`, `notApplicable`, `notSet`, `pending`, `succeeded`.
         If set to `auto` then step will automatically set `succeeded` or `failed` based on build status.
@@ -104,7 +104,7 @@ inputs:
 
   - devops_description: ""
     opts:
-      title: Commit status description
+      title: Pull Request status description
       description: |
         Status description.
 

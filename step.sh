@@ -1,9 +1,9 @@
 #!/bin/bash
 set -ex
 
-echo "${devops_commit_state} ${devops_description}"
+echo "${devops_pr_state} ${devops_description}"
 
-state=$devops_commit_state
+state=$devops_pr_state
 description=$devops_description
 
 if [ $state == "auto" ]
@@ -21,7 +21,7 @@ then
     description="${BITRISE_APP_TITLE} build #${BITRISE_BUILD_NUMBER} ${state}"
 fi
 
-URL="https://${devops_user}:${devops_pat}@dev.azure.com/${devops_organization}/${devops_project}/_apis/git/repositories/${devops_repository_id}/commits/${BITRISE_GIT_COMMIT}/statuses?api-version=5.1"
+URL="https://${devops_user}:${devops_pat}@dev.azure.com/${devops_organization}/${devops_project}/_apis/git/repositories/${devops_repository_id}/pullrequests/${BITRISE_PULL_REQUEST}/statuses?api-version=5.1"
 
 HTTP_RESPONSE=$(curl $URL --silent --write-out "HTTPSTATUS:%{http_code}" \
 -H "Content-Type: application/json" \
